@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: pedaling-wiki
+
+test:
+  <<: *default
+  database: pedaling-wiki-test
+
+staging:
+  <<: *default
+  database: pedaling-wiki
+  host: localhost
+  username: postgres
+  password: <%= ENV['WIKI_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: pedaling-wiki
+  host: localhost
+  username: postgres
+  password: <%= ENV['WIKI_DATABASE_PASSWORD'] %>
