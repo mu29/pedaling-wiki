@@ -7,6 +7,13 @@ require 'faker'
 require 'factory_girl'
 require 'shoulda'
 require 'database_cleaner'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/db/'
+  add_filter '/config/'
+  add_filter '/app/'
+end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods

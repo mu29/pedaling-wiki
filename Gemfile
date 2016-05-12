@@ -16,4 +16,5 @@ group :development,:test do
   gem 'shoulda'
   gem 'database_cleaner'
   gem 'shotgun'
+  gem 'simplecov'
 end
