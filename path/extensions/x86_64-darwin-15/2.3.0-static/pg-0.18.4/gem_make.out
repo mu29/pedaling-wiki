@@ -1,5 +1,5 @@
 current directory: /Users/InJung/GitHub/pedaling-wiki/path/gems/pg-0.18.4/ext
-/Users/InJung/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160512-62268-3iwjdm.rb extconf.rb
+/Users/InJung/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160512-68506-11gd1mk.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -78,4 +78,4 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/InJung/GitHub/pedaling-wiki/path/gems/pg-0.18.4/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20160512-62268-by5kg9
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20160512-68506-1gnysqt

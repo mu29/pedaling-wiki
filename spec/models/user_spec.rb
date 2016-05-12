@@ -1,14 +1,4 @@
 describe User do
-  context 'validation' do
-    it { should validate_uniqueness_of(:email) }
-    it { should validate_presence_of(:password) }
-  end
-
-  context 'association' do
-    it { should have_many(:wikis) }
-    it { should have_many(:replies) }
-  end
-
   it "can't be created without email" do
     user = build(:user, email: nil)
     expect(user).to be_valid

@@ -1,14 +1,9 @@
 # Rakefile
-require './app/application'
+require 'bundler/setup'
+require_relative 'config/init'
 require 'sinatra/activerecord/rake'
 require 'rspec/core'
 require 'rspec/core/rake_task'
-
-namespace :db do
-  task :load_config do
-    require './app/application'
-  end
-end
 
 task :default => :spec
 

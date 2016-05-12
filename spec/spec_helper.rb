@@ -1,15 +1,12 @@
 ENV['RACK_ENV'] = 'test'
 
+require './config/init'
 require 'rspec'
 require 'rack/test'
 require 'faker'
 require 'factory_girl'
 require 'shoulda'
-require 'shoulda/matchers'
 require 'database_cleaner'
-require 'sinatra/activerecord'
-
-Dir["./app/models/*.rb"].each{|model| require model }
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
@@ -33,13 +30,5 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     FactoryGirl.find_definitions
-  end
-end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-
-    with.library :active_record
   end
 end
