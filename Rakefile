@@ -1,4 +1,5 @@
 # Rakefile
+require './app/application'
 require 'sinatra/activerecord/rake'
 require 'rspec/core'
 require 'rspec/core/rake_task'

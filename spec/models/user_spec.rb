@@ -1,7 +1,3 @@
-require './app/models/User.rb'
-require 'rspec'
-require File.join( File.dirname(__FILE__), '..', 'spec_helper')
-
 describe User do
   context 'validation' do
     it { should validate_uniqueness_of(:email) }
