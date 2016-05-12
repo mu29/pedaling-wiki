@@ -1,7 +1,5 @@
-class WikisController < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
-
+class WikisController < ApplicationController
   get '/wikis' do
-    'wikis'
+    render_template :index
   end
 end

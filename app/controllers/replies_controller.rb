@@ -1,7 +1,5 @@
-class RepliesController < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
-
+class RepliesController < ApplicationController
   get '/replies' do
-    'replies'
+    render_template :index
   end
 end

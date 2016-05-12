@@ -1,12 +1,15 @@
 require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'erb'
 require './config/init'
 
 class PedalingWiki < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    halt 200, 'hi'
+    erb :'layouts/base' do
+      erb :'layouts/navbar'
+    end
   end
 end

@@ -1,7 +1,5 @@
-class UsersController < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
-
+class UsersController < ApplicationController
   get '/users' do
-    'users'
+    render_template :index
   end
 end
