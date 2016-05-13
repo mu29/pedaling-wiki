@@ -9,7 +9,7 @@ class PedalingWiki < Sinatra::Base
 
   get '/' do
     erb :'layouts/base' do
-      erb :'layouts/navbar'
+      ''
     end
   end
 end
