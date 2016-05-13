@@ -7,6 +7,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'pg'
 gem 'rake'
+gem 'redcarpet'
 
 group :development,:test do
   gem 'rspec'
