@@ -3,6 +3,7 @@ class ApplicationController < Sinatra::Base
 
   #set :root, './app'
   set :views, './app/views'
+  set :public_folder, './app/statics'
 
   def render_template(template)
     folder = self.class.name.gsub('Controller', '').downcase
