@@ -13,6 +13,6 @@ class ApplicationController < Sinatra::Base
   end
 
   def login?
-    !session[:email].nil?
+    !session[:token].nil?
   end
 end

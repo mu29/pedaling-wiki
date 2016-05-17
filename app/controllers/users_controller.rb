@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   end
 
   post '/users/login' do
-    if User.find_by(email: params[:email], password: params[:password])
-      session[:email] = session[:email]
+    @user = User.find_by(email: params[:email], password: params[:password])
+    if @user
+      session[:token] = @user.token
       redirect url('/')
     else
       @message = '아이디와 비밀번호를 확인해주세요.'
