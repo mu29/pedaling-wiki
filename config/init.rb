@@ -1,5 +1,3 @@
-enable :logging
-
 require './app/application'
 require './app/controllers/application_controller'
 
