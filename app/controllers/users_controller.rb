@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
-  get '/users' do
-    render_template :index
-  end
-
   get '/users/login' do
+    redirect url('/') if login?
     render_template :login
   end
 
   post '/users/login' do
     @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    if @user.present?
       session[:token] = @user.token
       redirect url('/')
     else
@@ -19,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/register' do
+    redirect url('/') if login?
     render_template :register
   end
 
