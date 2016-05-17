@@ -10,4 +10,8 @@ class UsersController < ApplicationController
   get '/users/login' do
     render_template :login
   end
+
+  get '/users/register' do
+    render_template :register
+  end
 end
