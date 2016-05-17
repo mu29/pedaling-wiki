@@ -7,16 +7,26 @@
 
     <title>페달링 위키</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href=<%= url('/css/base.css') %>>
     <link rel="stylesheet" href=<%= url('/css/user.css') %>>
     <script src="https://use.fontawesome.com/aeaa75aa7f.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class=“container”>
+    <div class="container">
       <%= erb :'layouts/navbar' %>
       <div class="row">
         <div class="col-sm-9 col-xs-9">
+          <% if @message %>
+            <div class="row">
+              <div class="col-md-offset-5 col-md-6 col-xs-offset-4 col-xs-8">
+                <div class="alert alert-info center-align">
+                  <%= @message %>
+                </div>
+              </div>
+            </div>
+          <% end %>
           <%= yield %>
         </div>
         <div class="col-sm-3 col-xs-3">
