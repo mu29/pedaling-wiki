@@ -5,6 +5,11 @@ class ApplicationController < Sinatra::Base
   set :public_folder, './app/statics'
   enable :sessions
 
+  before do
+    @message = session[:message]
+    session[:message] = nil
+  end
+
   def render_template(template)
     folder = self.class.name.gsub('Controller', '').downcase
     erb :'layouts/base'do |type|
@@ -15,6 +20,11 @@ class ApplicationController < Sinatra::Base
         erb :"#{folder}/#{template}"
       end
     end
+  end
+
+  def redirect_message(url, message)
+    session[:message] = message
+    redirect url
   end
 
   def logged_in?

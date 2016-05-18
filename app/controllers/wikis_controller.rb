@@ -14,7 +14,9 @@ class WikisController < ApplicationController
   end
 
   post '/wikis/new' do
-    redirect url('/users/login') unless logged_in?
+    unless logged_in?
+      redirect_message url('/users/login'), '로그인 후 이용해주세요.'
+    end
 
     @wiki = Wiki.create(title: params[:title],
                         content: params[:content],
@@ -22,7 +24,7 @@ class WikisController < ApplicationController
 
     title = URI.escape(@wiki.title)
     if @wiki.save
-      redirect url("/wikis/show/#{title}")
+      redirect_message url("/wikis/show/#{title}"), '성공적으로 작성하였습니다.'
     else
       @message = '문서 생성에 실패하였습니다.'
       render_template :new
@@ -35,7 +37,7 @@ class WikisController < ApplicationController
   end
 
   post '/wikis/edit' do
-    redirect url('/users/login') unless logged_in?
+    redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
 
     @wiki = Wiki.create(title: params[:title],
                         content: params[:content],
@@ -43,10 +45,9 @@ class WikisController < ApplicationController
 
     title = URI.escape(@wiki.title)
     if @wiki.save
-      redirect url("/wikis/show/#{title}")
+      redirect_message url("/wikis/show/#{title}"), '성공적으로 수정하였습니다.'
     else
-      @message = '문서 생성에 실패하였습니다.'
-      render_template :new
+      redirect_message url("/wikis/edit/#{title}"), '문서 생성에 실패하였습니다.'
     end
   end
 end
