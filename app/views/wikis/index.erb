@@ -1,1 +1,21 @@
-<div>wiki index</div>
+<div class="wiki-box">
+  <h1>모든 문서</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>작성자</th>
+        <th>작성시간</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @wikis.each do |wiki| %>
+        <tr>
+          <td class="full-width"><a href=<%= url("/wikis/show/#{wiki.title}") %>><%= wiki.title %></a></td>
+          <td class="td-width"><%= wiki.user.name %></td>
+          <td class="td-width"><%= wiki.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

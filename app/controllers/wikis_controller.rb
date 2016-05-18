@@ -1,4 +1,9 @@
 class WikisController < ApplicationController
+  get '/wikis' do
+    @wikis = Wiki.all.order('created_at DESC')
+    render_template :index
+  end
+
   get '/wikis/show' do
     title = URI.escape(Wiki.find(rand(Wiki.count) + 1).title)
     redirect url("/wikis/show/#{title}")

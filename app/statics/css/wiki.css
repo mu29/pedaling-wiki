@@ -4,3 +4,12 @@
   border-top: 0;
   background: white;
 }
+
+.td-width {
+  width: 160px;
+}
+
+.table > thead > tr > th {
+  border-top: 1px solid #ddd !important;
+  border-bottom: 1px solid #ddd !important;
+}
