@@ -11,7 +11,7 @@
     <tbody>
       <% @wikis.each do |wiki| %>
         <tr>
-          <td class="full-width"><a href=<%= url('/wikis/show/#{wiki.title}') %>><%= wiki.title %></a></td>
+          <td class="full-width"><a href=<%= url("/wikis/show/#{to_url(wiki.title)}") %>><%= wiki.title %></a></td>
           <td class="td-width"><%= wiki.user.name %></td>
           <td class="td-width"><%= wiki.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
         </tr>

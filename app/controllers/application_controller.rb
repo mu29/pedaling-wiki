@@ -69,4 +69,8 @@ class ApplicationController < Sinatra::Base
 
     markdown.render(text)
   end
+
+  def to_url(url)
+    URI.escape(url)
+  end
 end
