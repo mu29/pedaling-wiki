@@ -15,6 +15,7 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/new' do
+    redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
     render_template :new
   end
 
@@ -36,6 +37,7 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/edit/:title' do
+    redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
     @wiki = Wiki.find_wiki(params[:title])
     render_template :edit
   end
