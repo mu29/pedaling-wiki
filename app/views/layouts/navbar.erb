@@ -10,10 +10,10 @@
         <li><a href="#"><span class="fa fa-comments"></span> 최근 토론</a></li>
         <li><a href=<%= url('/wikis/new') %>><span class="fa fa-pencil"></span> 작성하기</a></li>
       </ul>
-      <form class="navbar-form navbar-right right-margin-8">
+      <form class="navbar-form navbar-right right-margin-8" method="get" action=<%= url('/wikis/search') %>>
         <div class="form-group">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search" name="query">
             <span class="input-group-btn">
               <button class="btn btn-default"><i class="fa fa-search"></i></button>
             </span>

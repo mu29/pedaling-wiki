@@ -4,6 +4,12 @@ class WikisController < ApplicationController
     render_template :index
   end
 
+  get '/wikis/search' do
+    @query = "%#{params[:query]}%"
+    @wikis = Wiki.where('title LIKE ? OR content LIKE ?', @query, @query)
+    render_template :search
+  end
+
   get '/wikis/show' do
     title = URI.escape(Wiki.find(rand(Wiki.count) + 1).title)
     redirect url("/wikis/show/#{title}")
