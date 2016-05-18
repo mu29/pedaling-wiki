@@ -12,6 +12,17 @@ class ApplicationController < Sinatra::Base
     set :show_exceptions, false
   end
 
+  error do
+    erb :'layouts/base' do |type|
+      case type
+      when :stylesheet
+        erb :'wikis/style'
+      when :content
+        erb :'layouts/error'
+      end
+    end
+  end
+
   def render_template(template, message = session[:message])
     folder = self.class.name.gsub('Controller', '').downcase
     session[:message] = message

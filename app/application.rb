@@ -22,15 +22,4 @@ class PedalingWiki < Sinatra::Base
       end
     end
   end
-
-  error do
-    erb :'layouts/base' do |type|
-      case type
-      when :stylesheet
-        erb :'wikis/style'
-      when :content
-        erb :'layouts/error'
-      end
-    end
-  end
 end
