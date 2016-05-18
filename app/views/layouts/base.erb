@@ -17,10 +17,10 @@
     <div class="container">
       <%= erb :'layouts/navbar' %>
       <div class="row">
-        <div class="col-sm-9 col-xs-9">
+        <div class="col-sm-9 col-xs-12">
           <% if @message %>
             <div class="row top-margin-16">
-              <div class="col-md-offset-5 col-md-6 col-xs-offset-4 col-xs-8">
+              <div class="col-sm-offset-5 col-sm-6 col-xs-offset-4 col-xs-8">
                 <div class="alert alert-info center-align">
                   <%= @message %>
                 </div>
@@ -29,7 +29,8 @@
           <% end %>
           <%= yield :content %>
         </div>
-        <div class="col-sm-3 col-xs-3">
+        <div class="col-sm-3 col-xs-12">
+          <%= erb :'layouts/menu' %>
         </div>
       </div>
     </div>

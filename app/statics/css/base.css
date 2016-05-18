@@ -54,3 +54,20 @@
   background-color: #5499FD;
   border-color: #5499FD;
 }
+
+.sidebar {
+  padding: 16px;
+  margin-left: -32px;
+}
+
+.menu {
+  border: 1px solid #E1E1E1;
+  background: white;
+}
+
+.menu > a {
+  width: 100%;
+  padding: 8px;
+  display: block;
+  border-top: 1px solid #E1E1E1;
+}
