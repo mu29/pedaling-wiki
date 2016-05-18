@@ -39,3 +39,7 @@ RSpec.configure do |config|
     FactoryGirl.find_definitions
   end
 end
+
+def session
+  last_request.env['rack.session']
+end
