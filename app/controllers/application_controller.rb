@@ -8,7 +8,8 @@ class ApplicationController < Sinatra::Base
   end
 
   configure :production do
-    disable :show_exceptions
+    set :raise_errors, false
+    set :show_exceptions, false
   end
 
   def render_template(template, message = session[:message])
