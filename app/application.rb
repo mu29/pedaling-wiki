@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'erb'
+require 'uri'
 require './config/init'
 
 class PedalingWiki < Sinatra::Base

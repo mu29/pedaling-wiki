@@ -5,4 +5,10 @@ class Wiki < ActiveRecord::Base
 
   belongs_to :user
   has_many :replies
+
+  before_create :generate_version
+
+  def generate_version
+    self.version = Wiki.where(title: self.title).size + 1
+  end
 end
