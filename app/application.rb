@@ -10,7 +10,14 @@ class PedalingWiki < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    erb :'layouts/base' do
+    @wiki = Wiki.find_wiki('대문')
+    erb :'layouts/base' do |type|
+      case type
+      when :stylesheet
+        erb :'wikis/style'
+      when :content
+        erb :'wikis/show'
+      end
     end
   end
 end

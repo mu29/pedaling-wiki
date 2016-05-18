@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
 
   def render_template(template)
     folder = self.class.name.gsub('Controller', '').downcase
-    erb :'layouts/base'do |type|
+    erb :'layouts/base' do |type|
       case type
       when :stylesheet
         erb :"#{folder}/style"
