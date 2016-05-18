@@ -8,6 +8,7 @@ gem 'sinatra-activerecord'
 gem 'pg'
 gem 'rake'
 gem 'redcarpet'
+gem 'dotenv'
 
 group :development, :test do
   gem 'rspec'
@@ -18,8 +19,4 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shotgun'
   gem 'simplecov'
-end
-
-group :staging, :production do
-  gem 'dotenv'
 end
