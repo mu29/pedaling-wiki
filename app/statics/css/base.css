@@ -6,6 +6,41 @@
   margin-right: 8px;
 }
 
+/*.no-border {
+  border: 0;
+}
+
 .navbar {
   border-radius: 0;
+  background-color: #5499FD;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}*/
+
+.navbar {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-color: #5499FD;
+  border-color: #5499FD;
 }
