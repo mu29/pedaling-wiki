@@ -11,7 +11,9 @@ class PedalingWiki < Sinatra::Base
 
   get '/' do
     @wiki = Wiki.find_wiki('대문')
+
     erb :'layouts/base' do |type|
+      next unless @wiki
       case type
       when :stylesheet
         erb :'wikis/style'
