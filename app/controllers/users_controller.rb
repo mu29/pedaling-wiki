@@ -10,8 +10,7 @@ class UsersController < ApplicationController
       session[:token] = @user.token
       redirect url('/')
     else
-      @message = '아이디와 비밀번호를 확인해주세요.'
-      render_template :login
+      render_template :login, '아이디와 비밀번호를 확인해주세요.'
     end
   end
 
@@ -28,8 +27,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_message url('/users/login'), '성공적으로 가입하였습니다.'
     else
-      @message = '이미 가입된 메일 주소입니다.'
-      render_template :register
+      render_template :register, '이미 가입된 메일 주소입니다.'
     end
   end
 end

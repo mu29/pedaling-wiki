@@ -7,8 +7,9 @@ class ApplicationController < Sinatra::Base
     enable :sessions
   end
 
-  def render_template(template)
+  def render_template(template, message = session[:message])
     folder = self.class.name.gsub('Controller', '').downcase
+    session[:message] = message
     erb :'layouts/base' do |type|
       case type
       when :stylesheet
