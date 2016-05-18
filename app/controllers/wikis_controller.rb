@@ -5,7 +5,7 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/show/:title' do
-    @wiki = Wiki.where(title: params[:title]).order('created_at DESC').first
+    @wiki = Wiki.find_wiki(params[:title])
     render_template :show
   end
 
