@@ -1,17 +1,11 @@
 <div class="wiki-box">
-  <div class="row">
-    <div class="col-sm-7 col-xs-7">
-      <h1><%= @wiki.title %></h1>
-    </div>
-    <div class="col-sm-5 col-xs-5">
-      <div class="pull-right">
-        <div class="btn-group" role="group">
-          <a class="btn btn-default">토론</a>
-          <a class="btn btn-default" href=<%= url("/wikis/edit/#{@wiki.title}") %>>편집</a>
-          <a class="btn btn-default">역사</a>
-        </div>
-      </div>
+  <div class="pull-right">
+    <div class="btn-group" role="group">
+      <a class="btn btn-default">토론</a>
+      <a class="btn btn-default" href=<%= url("/wikis/edit/#{@wiki.title}") %>>편집</a>
+      <a class="btn btn-default">역사</a>
     </div>
   </div>
+  <h1><%= @wiki.title %></h1>
   <%= markdown(@wiki.content) %>
 </div>

@@ -55,9 +55,16 @@
   border-color: #5499FD;
 }
 
-.sidebar {
-  padding: 16px;
-  margin-left: -32px;
+@media (max-width: 768px) {
+  .sidebar {
+    margin-top: 8px;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar {
+    padding: 16px;
+    margin-left: -32px;
+  }
 }
 
 .menu {
