@@ -7,8 +7,8 @@
 
     <title>페달링 위키</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href=<%= url('/css/base.css') %>>
-    <link rel="stylesheet" href=<%= url('/css/user.css') %>>
+    <link rel="stylesheet" href="/css/base.css">
+    <%= yield :stylesheet %>
     <script src="https://use.fontawesome.com/aeaa75aa7f.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@
               </div>
             </div>
           <% end %>
-          <%= yield %>
+          <%= yield :content %>
         </div>
         <div class="col-sm-3 col-xs-3">
         </div>
