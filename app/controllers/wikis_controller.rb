@@ -11,7 +11,11 @@ class WikisController < ApplicationController
 
   get '/wikis/show/:title' do
     @wiki = Wiki.find_wiki(params[:title])
-    render_template :show
+    if @wiki.level == 1
+      render_template :show
+    else
+      render_template (!logged_in? || current_user.level < @wiki.level ? :permission : :show)
+    end
   end
 
   get '/wikis/new' do
@@ -22,9 +26,11 @@ class WikisController < ApplicationController
   post '/wikis/new' do
     redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
     redirect_message url('/wikis/new'), '이미 존재하는 문서입니다.' if Wiki.find_by(title: params[:title])
+    redirect_message url('/wikis/new'), '내용을 모두 채워주세요.' unless params[:title].present? || params[:content].present? || params[:level].present?
 
     @wiki = Wiki.create(title: params[:title],
                         content: params[:content],
+                        level: params[:level],
                         user: current_user)
 
     title = URI.escape(@wiki.title)
@@ -47,6 +53,7 @@ class WikisController < ApplicationController
 
     @wiki = Wiki.create(title: params[:title],
                         content: params[:content],
+                        level: params[:level],
                         user: current_user)
 
     title = URI.escape(@wiki.title)
