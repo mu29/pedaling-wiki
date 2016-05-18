@@ -1,4 +1,14 @@
 <div class="sidebar">
+  <% if session[:message] %>
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="alert alert-info center-align">
+          <%= session[:message] %>
+          <% session[:message] = nil %>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <div class="menu">
     <div class="center-align">
       <h4>링크</h4>
