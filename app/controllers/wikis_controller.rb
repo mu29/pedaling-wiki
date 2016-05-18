@@ -15,7 +15,6 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/new' do
-    puts @message
     render_template :new
   end
 
@@ -37,7 +36,7 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/edit/:title' do
-    @wiki = Wiki.where(title: params[:title]).order('created_at DESC').last
+    @wiki = Wiki.find_wiki(params[:title])
     render_template :edit
   end
 
