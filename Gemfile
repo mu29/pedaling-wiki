@@ -9,7 +9,7 @@ gem 'pg'
 gem 'rake'
 gem 'redcarpet'
 
-group :development,:test do
+group :development, :test do
   gem 'rspec'
   gem 'rack-test'
   gem 'faker'
@@ -18,4 +18,8 @@ group :development,:test do
   gem 'database_cleaner'
   gem 'shotgun'
   gem 'simplecov'
+end
+
+group :staging, :production do
+  gem 'dotenv'
 end
