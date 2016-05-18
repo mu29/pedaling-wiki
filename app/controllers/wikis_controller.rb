@@ -15,13 +15,13 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/new' do
+    puts @message
     render_template :new
   end
 
   post '/wikis/new' do
-    unless logged_in?
-      redirect_message url('/users/login'), '로그인 후 이용해주세요.'
-    end
+    redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
+    redirect_message url('/wikis/new'), '이미 존재하는 문서입니다.' if Wiki.find_by(title: params[:title])
 
     @wiki = Wiki.create(title: params[:title],
                         content: params[:content],
