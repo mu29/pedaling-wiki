@@ -1,9 +1,11 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
-  set :views, './app/views'
-  set :public_folder, './app/statics'
-  enable :sessions
+  configure do
+    set :views, './app/views'
+    set :public_folder, './app/statics'
+    enable :sessions
+  end
 
   before do
     @message = session[:message]
