@@ -7,6 +7,10 @@ class ApplicationController < Sinatra::Base
     enable :sessions
   end
 
+  configure :production do
+    disable :show_exceptions
+  end
+
   def render_template(template, message = session[:message])
     folder = self.class.name.gsub('Controller', '').downcase
     session[:message] = message

@@ -78,3 +78,18 @@
   display: block;
   border-top: 1px solid #E1E1E1;
 }
+
+.error-box {
+  padding: 32px;
+  border: 1px solid #E1E1E1;
+  border-top: 0;
+  background: white;
+}
+
+.error-box > img {
+  display: inline-block;
+}
+
+.error-box > h2 {
+  margin-bottom: 5px;
+}
