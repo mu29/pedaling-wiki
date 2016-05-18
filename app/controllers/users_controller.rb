@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   get '/users/login' do
-    redirect url('/') if login?
+    redirect url('/') if logged_in?
     render_template :login
   end
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/register' do
-    redirect url('/') if login?
+    redirect url('/') if logged_in?
     render_template :register
   end
 

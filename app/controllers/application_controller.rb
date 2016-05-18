@@ -17,7 +17,11 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  def login?
+  def logged_in?
     !session[:token].nil?
+  end
+
+  def current_user
+    User.find_by(token: session[:token])
   end
 end
