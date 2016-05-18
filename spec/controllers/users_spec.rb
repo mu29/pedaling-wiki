@@ -1,8 +1,8 @@
-def app
-  UsersController.new
-end
+describe 'User Controller' do
+  def app
+    UsersController.new
+  end
 
-describe 'User API' do
   before(:each) do
     @user = create(:user)
   end
