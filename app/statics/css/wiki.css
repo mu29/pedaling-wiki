@@ -5,8 +5,10 @@
   background: white;
 }
 
-.td-width {
-  width: 160px;
+@media (min-width: 768px) {
+  .td-width {
+    width: 160px;
+  }
 }
 
 .table > thead > tr > th {
