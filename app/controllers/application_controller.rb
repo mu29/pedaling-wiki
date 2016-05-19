@@ -69,7 +69,8 @@ class ApplicationController < Sinatra::Base
   end
 
   def to_url(url)
-    URI.escape(url)
+    url = URI.escape(url)
+    url.gsub!('?', '%3F')
   end
 end
 
