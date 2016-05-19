@@ -11,7 +11,11 @@ class WikisController < ApplicationController
   end
 
   get '/wikis/show' do
-    title = URI.escape(Wiki.find(rand(Wiki.count) + 1).title)
+    loop do
+      @id = rand(Wiki.count) + 1
+      break if Wiki.exists?(@id)
+    end
+    title = URI.escape(Wiki.find(@id).title)
     redirect url("/wikis/show/#{title}")
   end
 
