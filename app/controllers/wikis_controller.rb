@@ -15,7 +15,7 @@ class WikisController < ApplicationController
       @id = rand(Wiki.count) + 1
       break if Wiki.exists?(@id)
     end
-    title = URI.escape(Wiki.find(@id).title)
+    title = to_url(Wiki.find(@id).title)
     redirect url("/wikis/show/#{title}")
   end
 
@@ -43,7 +43,7 @@ class WikisController < ApplicationController
                         level: params[:level],
                         user: current_user)
 
-    title = URI.escape(@wiki.title)
+    title = to_url(@wiki.title)
     if @wiki.save
       redirect_message url("/wikis/show/#{title}"), '성공적으로 작성하였습니다.'
     else
