@@ -1,9 +1,15 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#wiki-navbar">
+        <span class="sr-only">메뉴 보기</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="<%= url('/') %>">페달링 위키</a>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse" id="wiki-navbar">
       <ul class="nav navbar-nav">
         <li><a href="<%= url('/wikis') %>"><span class="fa fa-list"></span> 모든 문서</a></li>
         <li><a href="<%= url('/wikis/show') %>"><span class="fa fa-random"></span> 랜덤 문서</a></li>
