@@ -55,16 +55,14 @@ class ApplicationController < Sinatra::Base
       hard_wrap:       true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
-      fenced_code_blocks: true
     }
 
     extensions = {
-      autolink:           true,
-      superscript:        true,
-      disable_indented_code_blocks: true
+      autolink: true,
+      superscript: true,
     }
 
-    renderer = Redcarpet::Render::HTML.new(options)
+    renderer = WikiRenderer.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     markdown.render(text)
@@ -72,5 +70,22 @@ class ApplicationController < Sinatra::Base
 
   def to_url(url)
     URI.escape(url)
+  end
+end
+
+class WikiRenderer < Redcarpet::Render::Safe
+  def codespan(code)
+    if code.include? "\n"
+      code = code.split("\n").reduce do |result, element|
+        result + element + "\n" unless element.empty?
+      end
+      code = code[0 .. code.length - 2]
+      puts code
+      "<pre>" \
+        "<code>#{html_escape(code)}</code>" \
+      "</pre>"
+    else
+      "<code>#{html_escape(code)}</code>"
+    end
   end
 end
