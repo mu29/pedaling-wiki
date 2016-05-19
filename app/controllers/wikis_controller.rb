@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   get '/wikis' do
-    @wikis = Wiki.all.order('created_at DESC')
+    @wikis = Wiki.select("DISTINCT ON (title) *")
     render_template :index
   end
 
