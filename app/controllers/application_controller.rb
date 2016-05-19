@@ -83,7 +83,6 @@ class WikiRenderer < Redcarpet::Render::Safe
         result + element + "\n" unless element.empty?
       end
       code = code[0 .. code.length - 2]
-      puts code
       "<pre>" \
         "<code>#{html_escape(code)}</code>" \
       "</pre>"

@@ -55,7 +55,6 @@ class WikisController < ApplicationController
   get '/wikis/edit/:title' do
     redirect_message url('/users/login'), '로그인 후 이용해주세요.' unless logged_in?
     @wiki = Wiki.find_wiki(params[:title])
-    puts @wiki.title
     render_template :edit
   end
 
