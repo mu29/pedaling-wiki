@@ -60,6 +60,8 @@ class ApplicationController < Sinatra::Base
     extensions = {
       autolink: true,
       superscript: true,
+      strikethrough: true,
+      highlight: true,
     }
 
     renderer = WikiRenderer.new(options)
