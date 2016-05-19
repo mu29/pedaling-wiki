@@ -6,6 +6,7 @@
 .h2, .h3, .h4, h2, h3, h4 {
   margin-top: 30px;
   margin-bottom: 20px;
+  padding-bottom: 0.3rem;
   border-bottom: 0.5px solid #CCC;
 }
 
