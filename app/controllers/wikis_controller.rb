@@ -62,11 +62,10 @@ class WikisController < ApplicationController
                         level: params[:level],
                         user: current_user)
 
-    title = URI.escape(@wiki.title)
     if @wiki.save
-      redirect_message url("/wikis/show/#{title}"), '성공적으로 수정하였습니다.'
+      redirect_message url("/wikis/show/#{to_url(@wiki.title)}"), '성공적으로 수정하였습니다.'
     else
-      redirect_message url("/wikis/edit/#{title}"), '문서 생성에 실패하였습니다.'
+      redirect_message url("/wikis/edit/#{to_url(@wiki.title)}"), '문서 생성에 실패하였습니다.'
     end
   end
 end
