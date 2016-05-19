@@ -2,7 +2,7 @@
   <div class="col-sm-offset-3 col-sm-6 col-xs-12">
     <div class="login-box">
       <div class="title">회원가입</div>
-      <form method="post" action=<%= url('/users/register')%>>
+      <form method="post" action="<%= url('/users/register')%>">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="메일 주소" name="email">
         </div>
@@ -15,7 +15,7 @@
         <button class="btn btn-primary btn-block">회원가입</button>
       </form>
       <div class="bottom-area">
-        이미 계정이 있으세요? <a href=<%= url('/users/login') %>>로그인</a>
+        이미 계정이 있으세요? <a href="<%= url('/users/login') %>">로그인</a>
       </div>
     </div>
   </div>

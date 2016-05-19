@@ -1,16 +1,16 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href=<%= url('/') %>>페달링 위키</a>
+      <a class="navbar-brand" href="<%= url('/') %>">페달링 위키</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href=<%= url('/wikis') %>><span class="fa fa-list"></span> 모든 문서</a></li>
-        <li><a href=<%= url('/wikis/show') %>><span class="fa fa-random"></span> 랜덤 문서</a></li>
+        <li><a href="<%= url('/wikis') %>"><span class="fa fa-list"></span> 모든 문서</a></li>
+        <li><a href="<%= url('/wikis/show') %>"><span class="fa fa-random"></span> 랜덤 문서</a></li>
         <li><a href="#"><span class="fa fa-comments"></span> 최근 토론</a></li>
-        <li><a href=<%= url('/wikis/new') %>><span class="fa fa-pencil"></span> 작성하기</a></li>
+        <li><a href="<%= url('/wikis/new') %>"><span class="fa fa-pencil"></span> 작성하기</a></li>
       </ul>
-      <form class="navbar-form navbar-right right-margin-8" method="get" action=<%= url('/wikis/search') %>>
+      <form class="navbar-form navbar-right right-margin-8" method="get" action="<%= url('/wikis/search') %>">
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="query">
@@ -19,7 +19,7 @@
             </span>
           </div>
         </div>
-        <a class="btn btn-default no-border" href=<%= url('/users/login') %>><i class="fa fa-user"></i></a>
+        <a class="btn btn-default no-border" href="<%= url('/users/login') %>"><i class="fa fa-user"></i></a>
       </form>
     </div>
   </div>

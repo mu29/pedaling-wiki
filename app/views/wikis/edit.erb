@@ -1,8 +1,8 @@
 <div class="wiki-box">
-  <form method="post" action=<%= url('/wikis/edit')%>>
+  <form method="post" action="<%= url('/wikis/edit')%>">
     <div class="form-group">
       <label>제목</label>
-      <input type="text" class="form-control" placeholder="문서 제목을 입력하세요" name="title" readonly value=<%= @wiki.title %> />
+      <input type="text" class="form-control" placeholder="문서 제목을 입력하세요" name="title" readonly value="<%= params[:title] %>" />
     </div>
     <div class="form-group">
       <label>내용</label>
