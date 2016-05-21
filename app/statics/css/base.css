@@ -21,6 +21,10 @@ h2, h3, h4 {
   text-align: center;
 }
 
+.right-align {
+  text-align: right;
+}
+
 .right-margin-8 {
   margin-right: 8px;
 }

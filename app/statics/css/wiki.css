@@ -5,6 +5,17 @@
   background: white;
 }
 
+.wiki-box > .bottom-area {
+  background: #F6F6F6;
+  margin: 48px -16px -16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.blank {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 768px) {
   .td-width {
     width: 160px;
@@ -14,4 +25,10 @@
 .table > thead > tr > th {
   border-top: 1px solid #ddd !important;
   border-bottom: 1px solid #ddd !important;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-top: 0.5px solid #CCC;
 }
